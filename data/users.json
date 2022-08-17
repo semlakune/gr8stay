@@ -1,0 +1,16 @@
+[
+    {
+        "fullName" : "Mirza",
+        "password" : "user123",
+        "phoneNumber" : "082567847398",
+        "email" : "mirzapm13@gmail.com",
+        "address" : "Semarang"
+    },
+    {
+        "fullName" : "Aji",
+        "password" : "user123",
+        "phoneNumber" : "082567847398",
+        "email" : "ajip@gmail.com",
+        "address" : "Jakarta"
+    }
+]
