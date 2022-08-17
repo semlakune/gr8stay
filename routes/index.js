@@ -16,12 +16,14 @@ router.get('/register', (req, res) => {
 router.get('/', (req, res) => {
   res.render('pages/home', { pageTitle: 'Home' })
 })
-
 router.get('/location', (req, res) => {
   res.render('pages/location', { pageTitle: 'Book Hotel' })
 })
 
+
+
 router.get('/hotels', hotelController.showHotels)
+router.get('/hotels/:IdHotel/book', hotelController.hotelDetails)
 
 
 

@@ -13,6 +13,16 @@ class hotelController {
             })
     }
 
+    static hotelDetails(req, res) {
+        Hotel.findByPk(+req.params.IdHotel, { include: Room })
+            .then(hotel => [
+                res.send(hotel)
+            ])
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
 }
 
 module.exports = hotelController
