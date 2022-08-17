@@ -1,4 +1,5 @@
 const express = require('express')
+const hotelController = require('../controllers/hotelController')
 const router = express.Router()
 
 
@@ -15,14 +16,14 @@ router.get('/register', (req, res) => {
 router.get('/', (req, res) => {
   res.render('pages/home', { pageTitle: 'Home' })
 })
-
 router.get('/location', (req, res) => {
   res.render('pages/location', { pageTitle: 'Book Hotel' })
 })
 
-router.get('/hotels', (req, res) => {
-  res.render('pages/hotels', { pageTitle: 'Book Hotel' })
-})
+
+
+router.get('/hotels', hotelController.showHotels)
+router.get('/hotels/:IdHotel/book', hotelController.hotelDetails)
 
 
 
