@@ -11,17 +11,17 @@
           </div>
           <div class="col-md-6 px-2 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5">
             
-            <form class="needs-validation" novalidate>
+            <form action="/login" method="post" class="needs-validation" novalidate>
               <div class="mb-4">
-                <label class="form-label mb-2" for="signin-email">Email address</label>
-                <input class="form-control" type="email" id="signin-email" placeholder="Enter your email" required>
+                <label class="form-label mb-2" for="email">Email address</label>
+                <input class="form-control" type="email" name="email" id="email" placeholder="Enter your email" required>
               </div>
               <div class="mb-4">
                 <div class="d-flex align-items-center justify-content-between mb-2">
-                  <label class="form-label mb-0" for="signin-password">Password</label>
+                  <label class="form-label mb-0" for="password">Password</label>
                 </div>
                 <div class="password-toggle">
-                  <input class="form-control" type="password" id="signin-password" placeholder="Enter password" required>
+                  <input class="form-control" type="password" name="password" id="password" placeholder="Enter password" required>
                   
                 </div>
               </div>

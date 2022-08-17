@@ -1,5 +1,8 @@
 const express = require('express')
+
+const UserController = require('../controllers/UserController')
 const HotelController = require('../controllers/HotelController')
+
 const router = express.Router()
 
 
@@ -8,8 +11,20 @@ router.get('/login', (req, res) => {
     res.render('auth/login', { pageTitle: 'Login' })
 })
 
+router.post('/login', UserController.login)
+
 router.get('/register', (req, res) => {
     res.render('auth/register', { pageTitle: 'Register' })
+})
+
+router.post('/register', UserController.register)
+
+router.use((req,res,next)=>{
+  if(!req.session.email){
+    res.redirect('/login')
+  }else {
+    next()
+  }
 })
 
 // pages
