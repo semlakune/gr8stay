@@ -23,6 +23,7 @@ router.post('/register', UserController.register)
 
 //middleware customer
 router.use((req,res,next)=>{
+  console.log('masuk kesini');
   if(!req.session.user || req.session.user.role !== 'customer'){
     res.redirect('/login?errors=Silahkan Login terlebih dahulu')
   }else {

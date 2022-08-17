@@ -1,0 +1,42 @@
+<%- include('partials/head'); -%>
+<%- include('partials/nav'); -%>
+
+<div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between pb-3 pb-sm-4">
+        <h1 class="h2 mb-sm-0">Hotel: <%= hotel.name %></h1>
+        <h3>
+            <a class="btn btn-secondary" href="/admin/hotels">Back to Hotels</a>
+            <a class="btn btn-secondary" href="/admin/<%= hotel.id %>/addRoom">Add Room +</a>
+        </h3>
+      </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Image</th>
+                <th>Room Type</th>
+                <th>Price</th>
+                <th>Max Capacity</th>
+                <th>Facility</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% hotel.Rooms.forEach((el, index) => { %>
+                <tr>
+                    <td><%= ++index %></td>
+                    <td><img src="<%= el.imgUrl %>" style="width:300px;height:200px;"></td>
+                    <td><%= el.roomType %></td>
+                    <td><%= el.price %> /night</td>
+                    <td><%= el.capacity %></td>
+                    <td><%= el.facility %></td>
+                    <td>
+                        <a class="btn btn-danger" href="/admin/<%= hotel.id %> /deleteRoom/<%= el.id %> ">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('partials/foot'); -%>
