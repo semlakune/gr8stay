@@ -1,9 +1,29 @@
 const { Hotel, Reservation, Room } = require('../models');
+const { Sequelize } = require('sequelize');
 
 class HotelController {
 
+    static reservation(req, res) {
+        Hotel.findAll({
+            attributes: [
+                [Sequelize.fn('DISTINCT', Sequelize.col('address')) ,'address'],
+            ]
+        })
+            .then(address => {
+                const data = address.map(a => {
+                    return a.address
+                })
+                res.render('pages/reservation', { address: data, pageTitle: 'Reservation' })
+                // res.send(data)
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
     static showHotels(req, res) {
-        Hotel.findAll()
+        let address = req.query.address
+        Hotel.getLocation(address)
             .then(hotels => {
                 // res.send(hotels)
                 res.render('pages/hotels', { hotels, pageTitle: 'Book Hotels'})

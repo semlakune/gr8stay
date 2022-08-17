@@ -19,21 +19,19 @@ router.get('/register', (req, res) => {
 
 router.post('/register', UserController.register)
 
-router.use((req,res,next)=>{
-  if(!req.session.email){
-    res.redirect('/login')
-  }else {
-    next()
-  }
-})
+// router.use((req,res,next)=>{
+//   if(!req.session.email){
+//     res.redirect('/login')
+//   }else {
+//     next()
+//   }
+// })
 
 // pages
 router.get('/', (req, res) => {
   res.render('pages/home', { pageTitle: 'Home' })
 })
-router.get('/location', (req, res) => {
-  res.render('pages/location', { pageTitle: 'Book Hotel' })
-})
+router.get('/reservation', HotelController.reservation)
 
 
 
