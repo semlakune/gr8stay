@@ -1,6 +1,6 @@
 const { Hotel, Reservation, Room } = require('../models');
 
-class hotelController {
+class HotelController {
 
     static showHotels(req, res) {
         Hotel.findAll()
@@ -17,7 +17,7 @@ class hotelController {
         Hotel.findByPk(+req.params.IdHotel, { include: Room })
             .then(hotel => [
                 // res.send(hotel)
-                res.render('pages/hotel-detail', { hotel, pageTitle: `Hotel ${hotel.name}` })
+                res.render('pages/hotel-detail', { hotel, pageTitle: `Hotel ${ hotel.name }` })
             ])
             .catch(err => {
                 res.send(err)
@@ -26,4 +26,4 @@ class hotelController {
 
 }
 
-module.exports = hotelController
+module.exports = HotelController
