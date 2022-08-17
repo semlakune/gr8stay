@@ -14,6 +14,16 @@ module.exports = (sequelize, DataTypes) => {
       // Hotel.hasMany(models.Resertation)
       Hotel.hasMany(models.Room)
     }
+
+    static getLocation(address) {
+      const option = {}
+      if(address) {
+        option.where = {
+          address: address
+        }
+      }
+      return Hotel.findAll(option)
+    }
   }
   Hotel.init({
     name: DataTypes.STRING,

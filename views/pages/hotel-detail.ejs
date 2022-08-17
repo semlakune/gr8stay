@@ -3,6 +3,7 @@
 
 <div class="container">
     <h1>Hotel: <%= hotel.name %></h1>
+    <h4>Rooms:</h4>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -11,7 +12,8 @@
                 <th>Room Type</th>
                 <th>Price</th>
                 <th>Max Capacity</th>
-                <th>Facility</th>
+                <th>checkIn</th>
+                <th>checkOut</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -20,14 +22,22 @@
                 <tr>
                     <td><%= ++index %></td>
                     <td><img src="<%= el.imgUrl %>" style="width:300px;height:200px;"></td>
-                    <td><%= el.roomType %></td>
-                    <td><%= el.price %> /night</td>
-                    <td><%= el.capacity %></td>
-                    <td><%= el.facility %></td>
-                    <td>
-                        <a href="">Book</a>
-                    </td>
-                </tr>
+                    <form action="/hotels/<%= hotel.id %>/book/<%= el.id %>" method="post">
+                        <td name="roomType"><%= el.roomType %></td>
+                        <td name="price"><%= el.price %> /night</td>
+                        <td><%= el.capacity %> persons</td>
+                    
+                        <td>
+                            <input type="date" name="checkIn">
+                        </td>
+                        <td>
+                            <input type="date" name="checkOut">
+                        </td>
+                        <td>
+                            <button type="submit">Book</button>
+                        </td>
+                    </tr>
+                </form>
             <% }) %>
         </tbody>
     </table>
