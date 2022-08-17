@@ -19,8 +19,41 @@ module.exports = (sequelize, DataTypes) => {
   }
   Reservation.init({
     guestName: DataTypes.STRING,
-    checkIn: DataTypes.DATE,
-    checkOut: DataTypes.DATE,
+    checkIn: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Please enter check-in date'
+        },
+        notNull: {
+          msg: 'Please enter check-in date'
+        },
+        isToday(date) {
+          if (new Date(date).getDay() < new Date().getDay()) {
+            throw new Error('Maximum check-in date is today');
+          }
+        }
+      }
+    },
+    checkOut: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: 'Please enter check-out date'
+        },
+        notNull: {
+          msg: 'Please enter check-out date'
+        },
+        //TODO: min tanggal checkout hari besok
+        isTomorow(date) {
+          if (new Date(date).getDay() < new Date().getDay(date) + 1) {
+            throw new Error('Minimum check-out date is tomorow');
+          }
+        }
+      }
+    },
     UserId: DataTypes.INTEGER,
     HotelId: DataTypes.INTEGER,
     RoomId: DataTypes.INTEGER
