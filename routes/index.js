@@ -23,8 +23,19 @@ router.get('/location', (req, res) => {
 
 
 router.get('/hotels', hotelController.showHotels)
+
+router.get('/hotels/add', )
+router.post('/hotels/add', )
+
 router.get('/hotels/:IdHotel/book', hotelController.hotelDetails)
 
+router.get('/hotels/:IdHotel/room/add', )
+router.post('/hotels/:IdHotel/room/add', )
+
+router.get('/hotels/:IdHotel/room/edit/:IdRoom', )
+router.post('/hotels/:IdHotel/room/edit/:IdRoom', )
+
+router.get('/hotels/:IdHotel/room/delete/:IdRoom', )
 
 
 module.exports = router
