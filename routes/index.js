@@ -1,4 +1,5 @@
 const express = require('express')
+const hotelController = require('../controllers/hotelController')
 const router = express.Router()
 
 
@@ -20,9 +21,7 @@ router.get('/location', (req, res) => {
   res.render('pages/location', { pageTitle: 'Book Hotel' })
 })
 
-router.get('/hotels', (req, res) => {
-  res.render('pages/hotels', { pageTitle: 'Book Hotel' })
-})
+router.get('/hotels', hotelController.showHotels)
 
 
 

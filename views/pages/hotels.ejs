@@ -26,22 +26,23 @@
     <!-- Catalog grid-->
     <div class="row g-4 py-4">
       <!-- Item-->
-      <div class="col-sm-6 col-xl-4">
-        <div class="card shadow-sm card-hover border-0 h-100">
-                <img src="https://finder.createx.studio/img/real-estate/single/02.jpg" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title">Hotel Green Field Ubud</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Rp. 340.999 / night</li>
-                  <li class="list-group-item">A second item</li>
-                </ul>
-                <div class="card-body">
-                  <a href="#" class="btn btn-success">Book Now</a>
-                </div>
+      <% hotels.forEach(h => { %>
+        <div class="col-sm-6 col-xl-4">
+          <div class="card shadow-sm card-hover border-0 h-100">
+                  <img src="<%= h.imgUrl %>" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= h.name %></h5>
+                    <p class="card-text"><%= h.address %></p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Rp. 340.999 / night</li>
+                  </ul>
+                  <div class="card-body">
+                    <a href="#" class="btn btn-success">Book Now</a>
+                  </div>
+          </div>
         </div>
-      </div>
+      <% }) %>
       <!-- Item-->
       
   </div>
