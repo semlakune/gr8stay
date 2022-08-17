@@ -17,7 +17,7 @@ class AdminController {
             if(e){
                 const isValidPassword = bcryptjs.compareSync(password, e.password)
                 if(isValidPassword){
-                    req.session.user = {email : e.email, role : e.role}
+                    req.session.user = {userId:e.id,email : e.email, role : e.role}
                     return res.redirect('/admin')
                 } else {
                     return res.redirect(`/admin/login?errors=Invalid Username or Password`)
