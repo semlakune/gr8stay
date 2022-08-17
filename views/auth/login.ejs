@@ -1,0 +1,36 @@
+<%- include('../pages/partials/head'); -%>
+
+<main class="page-wrapper">
+    <!-- Page content-->
+    <div class="container-fluid d-flex h-100 align-items-center justify-content-center py-4 py-sm-5">
+      <div class="card card-body" style="max-width: 940px">
+        <div class="row mx-0 align-items-center">
+          <div class="col-md-6 border-end-md p-2 p-sm-5">
+            <h2 class="h3 mb-4 mb-sm-5">Hey there!<br>Welcome back.</h2><img class="d-block mx-auto" src="https://finder.createx.studio/img/signin-modal/signin.svg" width="344" alt="Illustartion">
+            <div class="mt-4 mt-sm-5">Don't have an account? <a href="/register">Sign up here</a></div>
+          </div>
+          <div class="col-md-6 px-2 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5">
+            
+            <form class="needs-validation" novalidate>
+              <div class="mb-4">
+                <label class="form-label mb-2" for="signin-email">Email address</label>
+                <input class="form-control" type="email" id="signin-email" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <label class="form-label mb-0" for="signin-password">Password</label>
+                </div>
+                <div class="password-toggle">
+                  <input class="form-control" type="password" id="signin-password" placeholder="Enter password" required>
+                  
+                </div>
+              </div>
+              <button class="btn btn-danger btn-lg w-100" type="submit">Sign in</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<%- include('../pages/partials/foot'); -%>

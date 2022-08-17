@@ -1,0 +1,49 @@
+<%- include('partials/head'); -%>
+<%- include('partials/nav'); -%>
+
+<div class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-4 px-3 px-xl-4 px-xxl-5 mx-auto">
+    
+    <!-- Title-->
+    <div class="d-sm-flex align-items-center justify-content-between pb-3 pb-sm-4">
+      <h1 class="h2 mb-sm-0">Hotels</h1>
+    </div>
+    <!-- Sorting-->
+    <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch my-2">
+      <div class="d-flex align-items-center flex-shrink-0">
+        <label class="fs-sm me-2 pe-1 text-nowrap" for="sortby"><i class="fi-arrows-sort text-muted mt-n1 me-2"></i>Sort by:</label>
+        <select class="form-select form-select-sm" id="sortby">
+          <option>Newest</option>
+          <option>Popularity</option>
+          <option>Low - High Price</option>
+          <option>High - Low Price</option>
+          <option>High rating</option>
+          <option>Average Rating</option>
+        </select>
+      </div>
+      <hr class="d-none d-sm-block w-100 mx-4">
+      <div class="d-none d-sm-flex align-items-center flex-shrink-0 text-muted"></div>
+    </div>
+    <!-- Catalog grid-->
+    <div class="row g-4 py-4">
+      <!-- Item-->
+      <div class="col-sm-6 col-xl-4">
+        <div class="card shadow-sm card-hover border-0 h-100">
+                <img src="https://finder.createx.studio/img/real-estate/single/02.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Hotel Green Field Ubud</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Rp. 340.999 / night</li>
+                  <li class="list-group-item">A second item</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="btn btn-success">Book Now</a>
+                </div>
+        </div>
+      </div>
+      <!-- Item-->
+      
+  </div>
+
+<%- include('partials/foot'); -%>

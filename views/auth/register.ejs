@@ -1,0 +1,38 @@
+<%- include('../pages/partials/head'); -%>
+
+  <main class="page-wrapper">
+    <!-- Page content-->
+    <div class="container-fluid d-flex h-100 align-items-center justify-content-center py-4 py-sm-5">
+      <div class="card card-body" style="max-width: 940px">
+        <div class="row mx-0 align-items-center">
+          <div class="col-md-6 border-end-md p-2 p-sm-5">
+            <img class="d-block mx-auto" src="https://finder.createx.studio/img/signin-modal/signup.svg" width="344" alt="Illustartion">
+            <div class="mt-sm-4 pt-md-3">Already have an account? <a href="/login">Sign in</a></div>
+          </div>
+          <div class="col-md-6 px-2 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5">
+            
+            <form class="needs-validation" novalidate>
+              <div class="mb-4">
+                <label class="form-label" for="signup-name">Full name</label>
+                <input class="form-control" type="text" id="signup-name" placeholder="Enter your full name" required>
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="signup-email">Email address</label>
+                <input class="form-control" type="email" id="signup-email" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="signup-password">Password <span class='fs-sm text-muted'>min. 8 char</span></label>
+                <div class="password-toggle">
+                  <input class="form-control" type="password" id="signup-password" minlength="8" required>
+                  
+                </div>
+              </div>
+              <button class="btn btn-danger btn-lg w-100" type="submit">Sign up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<%- include('../pages/partials/foot'); -%>
