@@ -3,7 +3,7 @@
 const fs = require('fs')
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+    up (queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -26,12 +26,13 @@ module.exports = {
   return queryInterface.bulkInsert('Users',users)
   },
 
-  async down (queryInterface, Sequelize) {
+    down (queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+     return queryInterface.bulkDelete('Users')
   }
 };
