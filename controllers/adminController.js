@@ -1,10 +1,10 @@
 const { User } = require('../models/index.js');
 const bcryptjs = require('bcryptjs');
 
-class UserController {
+class AdminController {
     static register(req,res) {
         const { fullName, email, password, address, phoneNumber } = req.body
-        User.create({ fullName, email, password, address, phoneNumber,role : 'user' })
+        User.create({ fullName, email, password, address, phoneNumber, role : 'admin' })
             .then(e => res.send(e))
             .catch(err => res.send(err))
     }
@@ -18,15 +18,15 @@ class UserController {
                 const isValidPassword = bcryptjs.compareSync(password, e.password)
                 if(isValidPassword){
                     req.session.user = {userId:e.id,email : e.email, role : e.role}
-                    return res.redirect('/')
+                    return res.redirect('/admin')
                 } else {
-                    return res.redirect(`/login?errors=Invalid Username or Password`)
+                    return res.redirect(`/admin/login?errors=Invalid Username or Password`)
                 }
             } else{
-                return res.redirect(`/login?errors=User Not Found`)
+                return res.redirect(`/admin/login?errors=User Not Found`)
             }            
         })
     }
 }
 
-module.exports = UserController
+module.exports = AdminController

@@ -8,7 +8,8 @@ const router = express.Router()
 
 // authentication
 router.get('/login', (req, res) => {
-    res.render('auth/login', { pageTitle: 'Login' })
+  let errors = req.query.errors
+    res.render('auth/login', { pageTitle: 'Login', errors})
 })
 
 router.post('/login', UserController.login)
@@ -19,9 +20,11 @@ router.get('/register', (req, res) => {
 
 router.post('/register', UserController.register)
 
+
+//middleware customer
 router.use((req,res,next)=>{
-  if(!req.session.email){
-    res.redirect('/login')
+  if(!req.session.user || req.session.user.role !== 'customer'){
+    res.redirect('/login?errors=Silahkan Login terlebih dahulu')
   }else {
     next()
   }
