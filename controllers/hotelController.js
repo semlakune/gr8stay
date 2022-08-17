@@ -46,14 +46,43 @@ class HotelController {
 
     static postBook(req, res) {
         const data = {
-            RoomId: req.params.IdRoom,
-            HotelId: req.params.IdHotel,
+            UserId: req.session.user.userId,
+            RoomId: +req.params.IdRoom,
+            HotelId: +req.params.IdHotel,
             checkIn: req.body.checkIn,
-            checkOut: req.body.checkOut,
-            UserEmail: req.session.email
+            checkOut: req.body.checkOut
         }
+        console.log(data);
+        User.findByPk(data.UserId)
+            .then(user => {
+                
+                return Reservation.create({
+                    guestName: user.fullName,
+                    checkIn: data.checkIn,
+                    checkOut: data.checkOut,
+                    UserId: data.UserId,
+                    HotelId: data.HotelId,
+                    RoomId: data.RoomId
+                })
 
-        res.send(data)
+            })
+            .then(reservation => {
+                res.redirect(`/itinerary/${reservation.id}`)
+            })
+
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static itinerary(req, res) {
+        Reservation.findByPk(+req.params.IdReservation, { include: [Hotel, Room] })
+            .then(reservation => {
+                res.send(reservation)
+            })
+            .catch(err => {
+                res.send(err)
+            })
     }
 
 }
