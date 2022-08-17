@@ -23,7 +23,7 @@ class UserController {
                     return res.send('Invalid username or Password')
                 }
             } else{
-                return res.send('User Not FOund')
+                return res.send('User Not Found')
             }            
         })
     }

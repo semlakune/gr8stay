@@ -1,4 +1,4 @@
-const { Hotel, Reservation, Room } = require('../models');
+const { Hotel, Reservation, Room, User } = require('../models');
 const { Sequelize } = require('sequelize');
 
 class HotelController {
@@ -42,6 +42,18 @@ class HotelController {
             .catch(err => {
                 res.send(err)
             })
+    }
+
+    static postBook(req, res) {
+        const data = {
+            RoomId: req.params.IdRoom,
+            HotelId: req.params.IdHotel,
+            checkIn: req.body.checkIn,
+            checkOut: req.body.checkOut,
+            UserEmail: req.session.email
+        }
+
+        res.send(data)
     }
 
 }
