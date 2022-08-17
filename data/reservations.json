@@ -1,0 +1,22 @@
+[{
+    "guestName": "Seth",
+    "checkIn": "2021-11-15",
+    "checkOut": "2021-11-15 17:23:54 UTC",
+    "UserId": 2,
+    "HotelId": 2,
+    "RoomId": 1
+  }, {
+    "guestName": "Renae",
+    "checkIn": "2021-09-20",
+    "checkOut": "2021-09-20 17:50:08 UTC",
+    "UserId": 2,
+    "HotelId": 5,
+    "RoomId": 3
+  }, {
+    "guestName": "Lara",
+    "checkIn": "2022-01-20",
+    "checkOut": "2022-01-20 13:34:07 UTC",
+    "UserId": 2,
+    "HotelId": 7,
+    "RoomId": 4
+  }]

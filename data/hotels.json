@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Padberg Inc",
+        "address": "Jakarta",
+        "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff"
+    },
+    {
+        "name": "Walter and Sons",
+        "address": "Bandung",
+        "imgUrl": "http://dummyimage.com/573x785.png/ff4444/ffffff"
+    },
+    {
+        "name": "Heller Group",
+        "address": "Yogyakarta",
+        "imgUrl": "http://dummyimage.com/1116x764.png/ff4444/ffffff"
+    },
+    {
+        "name": "Hammes and Sons",
+        "address": "Surabaya",
+        "imgUrl": "http://dummyimage.com/710x1035.png/5fa2dd/ffffff"
+    },
+    {
+        "name": "Dare LLC",
+        "address": "Semarang",
+        "imgUrl": "http://dummyimage.com/862x930.png/5fa2dd/ffffff"
+    },
+    {
+        "name": "Wisozk LLC",
+        "address": "Yogyakarta",
+        "imgUrl": "http://dummyimage.com/814x672.png/dddddd/000000"
+    }
+]
