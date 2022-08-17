@@ -24,7 +24,7 @@
                     <td><img src="<%= el.imgUrl %>" style="width:300px;height:200px;"></td>
                     <form action="/hotels/<%= hotel.id %>/book/<%= el.id %>" method="post">
                         <td name="roomType"><%= el.roomType %></td>
-                        <td name="price"><%= el.price %> /night</td>
+                        <td name="price"><%= el.formatCurrency %> /night</td>
                         <td><%= el.capacity %> persons</td>
                     
                         <td>
@@ -34,7 +34,7 @@
                             <input type="date" name="checkOut">
                         </td>
                         <td>
-                            <button type="submit">Book</button>
+                            <button type="submit" class="btn btn-outline-danger">Book</button>
                         </td>
                     </tr>
                 </form>
