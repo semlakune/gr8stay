@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const { currencyFormatter } = require('../helpers/currencyFormatter');
 module.exports = (sequelize, DataTypes) => {
   class Room extends Model {
     /**
@@ -13,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Room.hasMany(models.Reservation)
       Room.belongsTo(models.Hotel)
+    }
+
+    get formatCurrency() {
+      return currencyFormatter(this.price)
     }
   }
   Room.init({
