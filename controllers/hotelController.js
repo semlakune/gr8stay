@@ -97,6 +97,20 @@ class HotelController {
             })
     }
 
+    static getOrders(req,res){
+        let UserId = req.session.user.userId
+
+        Reservation.findAll({include :[
+            {model : User,
+                where : {id : UserId}},
+            {model : Hotel},
+            {model : Room}
+        ]})
+        .then(e => res.render('pages/order-list',{pageTitle : "Orders", reservations : e}))
+        // .then(e => res.send(e))
+        .catch(e => res.send(e))
+    }
+
 }
 
 module.exports = HotelController

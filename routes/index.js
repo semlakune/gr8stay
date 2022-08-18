@@ -48,6 +48,7 @@ router.get('/hotels', HotelController.showHotels)
 router.get('/hotels/:IdHotel/book', HotelController.hotelDetails)
 router.post('/hotels/:IdHotel/book/:IdRoom', HotelController.postBook)
 router.get('/itinerary/:IdReservation', HotelController.itinerary)
+router.get('/orders', HotelController.getOrders)
 
 
 module.exports = router

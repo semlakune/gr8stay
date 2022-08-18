@@ -1,0 +1,27 @@
+<%- include('partials/head'); -%>
+    <%- include('partials/nav'); -%>
+
+        <div class="d-flex flex-column align-items-center">
+            <div class="list-group w-75">
+                <% reservations.forEach(reservation => { %>
+                    <div  class="list-group-item list-group-item-action d-flex gap-3 py-3" >
+                        <img src="<%= reservation.Hotel.imgUrl %>" style="object-fit: cover;" alt="twbs" width="200" height="200"
+                            class="rounded-circle flex-shrink-0">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                            <div>
+                                <h3 class="mb-2"><%= reservation.Hotel.name %></h3>
+                                <h4 class="mb-0"><%= reservation.Room.roomType %></h4>
+                                <hr class="my-4">
+                                <h5 class="mb-0">Check In Date: <%= reservation.checkIn.toLocaleDateString('id-ID') %></h5>
+                                <h5 class="mb-0">Check Out Date: <%= reservation.checkOut.toLocaleDateString('id-ID') %></h5>
+                                <h5 class="mb-0">Total Payment: <%= reservation.Room.formatCurrency %></h5>
+                            </div>
+                            <h4 class="opacity-50 text-nowrap">Checked In as: <%= reservation.guestName %> </h4>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+
+
+        <%- include('partials/foot'); -%>
