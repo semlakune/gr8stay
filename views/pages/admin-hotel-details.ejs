@@ -27,11 +27,12 @@
                     <td><%= ++index %></td>
                     <td><img src="<%= el.imgUrl %>" style="width:300px;height:200px;"></td>
                     <td><%= el.roomType %></td>
-                    <td><%= el.price %> /night</td>
+                    <td><%= el.formatCurrency %> /night</td>
                     <td><%= el.capacity %></td>
                     <td><%= el.facility %></td>
                     <td>
                         <a class="btn btn-danger" href="/admin/<%= hotel.id %> /deleteRoom/<%= el.id %> ">Delete</a>
+                        <a class="btn btn-warning" href="/admin/<%= hotel.id %>/editRoom/<%= el.id %> ">Edit</a>
                     </td>
                 </tr>
             <% }) %>

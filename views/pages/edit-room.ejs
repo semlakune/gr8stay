@@ -1,0 +1,60 @@
+<%- include('partials/head'); -%>
+<%- include('partials/admin-nav'); -%>
+
+<section class="container-fluid my-5 pt-5 pb-lg-4 px-xxl-4">
+    
+    <div class="row">
+        <div class="col-md-3"></div>
+    <div class="col-md-6">
+        
+        <form action="/admin/<%= room.Hotel.id %>/editRoom/<%= room.id %>" method="post" class="needs-validation" novalidate="">
+            
+              <div class="col-12 my-3">
+                <label for="roomType" class="form-label">Room Type</label>
+                <input type="text" class="form-control" id="roomType" name="roomType" placeholder="" value="<%= room.roomType %>" required="">
+                <div class="invalid-feedback">
+                  Room type is required.
+                </div>
+              </div>
+
+              <div class="col-12 my-3">
+                <label for="facility" class="form-label">Facilities</label>
+                <input type="text" class="form-control" id="facility" name="facility" placeholder="" value="<%= room.facility %>" required="">
+                <div class="invalid-feedback">
+                  Facility is required.
+                </div>
+              </div>
+    
+              <div class="col-12 my-3">
+                <label for="capacity" class="form-label">Capacity</label>
+                <input type="number" class="form-control" id="capacity" name="capacity" placeholder="" value="<%= room.capacity %>" required="">
+                <div class="invalid-feedback">
+                  Capacity is required.
+                </div>
+              </div>
+
+              <div class="col-12 my-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price" placeholder="" value="<%= room.price %>" required="">
+                <div class="invalid-feedback">
+                  price is required.
+                </div>
+              </div>
+
+              <div class="col-12 my-3">
+                <label for="imgUrl" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="" value="<%= room.imgUrl %>" required="">
+                <div class="invalid-feedback">
+                  Image URL is required.
+                </div>
+              </div>
+    
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+          </form>
+    </div>
+    </div>
+    
+    <div class="col-md-3"></div>
+</section>
+
+<%- include('partials/foot'); -%>
