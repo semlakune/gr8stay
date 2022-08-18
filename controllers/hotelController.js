@@ -3,6 +3,18 @@ const { Sequelize } = require('sequelize');
 
 class HotelController {
 
+    static customerProfile(req, res) {
+        const id = req.session.user.userId
+        User.findByPk(id)
+            .then(customer => {
+                // res.send(customer)
+                res.render('pages/customer-profile', { customer, pageTitle: 'Customer Profile' })
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
     static reservation(req, res) {
         Hotel.findAll({
             attributes: [

@@ -52,8 +52,6 @@ admrouter.get('/:HotelId/delete', AdminController.deleteHotel)
 
 admrouter.get('/:HotelId/deleteRoom/:RoomId', AdminController.deleteRoom)
 
-//logout
-admrouter.get('/logout/:AdminId')
 
 
 
