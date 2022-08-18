@@ -5,7 +5,7 @@ class AdminController {
     static register(req, res) {
         const { fullName, email, password, address, phoneNumber } = req.body
         User.create({ fullName, email, password, address, phoneNumber, role: 'admin' })
-            .then((_) => res.redirect('/hotels'))
+            .then((_) => res.redirect('/admin/login'))
             .catch(err => res.send(err))
     }
 
