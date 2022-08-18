@@ -7,6 +7,13 @@ const router = express.Router()
 
 
 // authentication
+router.get('/logout',(req,res)=>{
+  req.session.destroy((err)=>{
+    if(err) return res.send(err)
+    else res.redirect('/login')
+  })
+})
+
 router.get('/login', (req, res) => {
   let errors = req.query.errors
     res.render('auth/login', { pageTitle: 'Login', errors})
