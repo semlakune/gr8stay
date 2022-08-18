@@ -40,6 +40,18 @@ class AdminController {
             })
     }
 
+    static editAdminProfile(req, res) {
+        const id = req.session.user.userId
+        User.findByPk(id)
+            .then(admin => {
+                // res.send(admin)
+                res.render('pages/edit-admin-profile', { admin, pageTitle: 'Edit Profile' })
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
     static showHotels(req, res) {
         Hotel.findAll()
             .then(hotels => {

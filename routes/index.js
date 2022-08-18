@@ -23,10 +23,10 @@ router.post('/register', UserController.register)
 
 //middleware customer
 router.use((req,res,next)=>{
-  console.log('masuk kesini');
+//   console.log('masuk kesini');
   if(!req.session.user || req.session.user.role !== 'customer'){
     res.redirect('/login?errors=Silahkan Login terlebih dahulu')
-  }else {
+  } else {
     next()
   }
 })
@@ -35,6 +35,7 @@ router.use((req,res,next)=>{
 router.get('/', (req, res) => {
   res.render('pages/home', { pageTitle: 'Home' })
 })
+router.get('/profile', HotelController.customerProfile)
 router.get('/reservation', HotelController.reservation)
 router.get('/hotels', HotelController.showHotels)
 router.get('/hotels/:IdHotel/book', HotelController.hotelDetails)

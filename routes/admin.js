@@ -31,6 +31,8 @@ admrouter.use((req, res, next) => {
 
 // pages
 admrouter.get('/profile', AdminController.adminProfile)
+admrouter.get('/profile/edit', AdminController.editAdminProfile)
+
 
 admrouter.get('/hotels', AdminController.showHotels)
 
@@ -50,8 +52,6 @@ admrouter.get('/:HotelId/delete', AdminController.deleteHotel)
 
 admrouter.get('/:HotelId/deleteRoom/:RoomId', AdminController.deleteRoom)
 
-//logout
-admrouter.get('/logout/:AdminId')
 
 
 
