@@ -31,6 +31,8 @@ admrouter.use((req, res, next) => {
 
 // pages
 admrouter.get('/profile', AdminController.adminProfile)
+admrouter.get('/profile/edit', AdminController.editAdminProfile)
+
 
 admrouter.get('/hotels', AdminController.showHotels)
 
