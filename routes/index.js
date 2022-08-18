@@ -5,7 +5,6 @@ const HotelController = require('../controllers/HotelController')
 
 const router = express.Router()
 
-
 // authentication
 router.get('/logout',(req,res)=>{
   req.session.destroy((err)=>{
@@ -49,7 +48,7 @@ router.get('/reservation', HotelController.reservation)
 router.get('/hotels', HotelController.showHotels)
 router.get('/hotels/:IdHotel/book', HotelController.hotelDetails)
 router.post('/hotels/:IdHotel/book/:IdRoom', HotelController.postBook)
-router.get('/itinerary/:IdReservation', HotelController.itinerary)
+// router.get('/itinerary/:IdReservation', HotelController.itinerary)
 router.get('/voucher/:IdReservation', HotelController.voucher)
 router.get('/orders', HotelController.getOrders)
 
