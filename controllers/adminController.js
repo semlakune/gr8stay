@@ -78,11 +78,10 @@ class AdminController {
     }
 
     static showRooms(req,res) {
-        Hotel.findByPk(+req.params.id, { include: Room })
-            .then(hotel => [
-                // res.send(hotel)
+        Hotel.findByPk(+req.params.HotelId, { include: Room })
+            .then(hotel => {
                 res.render('pages/admin-hotel-details', { hotel, pageTitle: `Hotel ${hotel.name}` })
-            ])
+            })
             .catch(err => {
                 res.send(err)
             })
@@ -126,6 +125,31 @@ class AdminController {
             if(err.name = 'SequelizeForeignKeyConstraintError') return res.send('Room masih dipesan!')
             else return res.send(err)
         })
+    }
+
+    static editRoom(req, res) {
+        Room.findByPk(req.params.RoomId, { include: Hotel})
+            .then(room => {
+                // res.send(room)
+                res.render('pages/edit-room', { room, pageTitle: 'Edit Room'})
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static postEditRoom(req, res) {
+        const data = {
+            capacity: req.body.capacity,
+            facility: req.body.facility,
+            price: req.body.price,
+            roomType: req.body.roomType,
+            imgUrl: req.body.imgUrl
+        }
+        Room.update(data, { where: { id: req.params.RoomId} } )
+         .then((_) => {
+            res.redirect(`/admin/${req.params.HotelId}/hotelDetail`)
+         })
     }
 }
 
