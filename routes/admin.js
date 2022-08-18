@@ -1,7 +1,6 @@
 const express = require('express')
 
 const AdminController = require('../controllers/adminController')
-const HotelController = require('../controllers/HotelController')
 
 const admrouter = express.Router()
 
@@ -31,6 +30,8 @@ admrouter.use((req, res, next) => {
 })
 
 // pages
+admrouter.get('/profile', AdminController.adminProfile)
+
 admrouter.get('/hotels', AdminController.showHotels)
 
 admrouter.get('/addHotel', (req, res) => {
@@ -49,9 +50,8 @@ admrouter.get('/:HotelId/delete', AdminController.deleteHotel)
 
 admrouter.get('/:HotelId/deleteRoom/:RoomId', AdminController.deleteRoom)
 
-admrouter.get('/location', (req, res) => {
-  res.render('pages/location', { pageTitle: 'Book Hotel' })
-})
+//logout
+admrouter.get('/logout/:AdminId')
 
 
 
