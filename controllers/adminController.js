@@ -1,4 +1,4 @@
-const { User, Hotel, Reservation, Room } = require('../models');
+const { User, Hotel, Reservation, Room, Profile } = require('../models');
 const bcryptjs = require('bcryptjs');
 
 class AdminController {
@@ -30,7 +30,7 @@ class AdminController {
 
     static adminProfile(req, res) {
         const id = req.session.user.userId
-        User.findByPk(id)
+        User.findByPk(id, {include : Profile})
             .then(admin => {
                 // res.send(admin)
                 res.render('pages/admin-profile', { admin, pageTitle: 'Admin Profile' })
