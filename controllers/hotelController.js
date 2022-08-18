@@ -3,6 +3,18 @@ const { Sequelize } = require('sequelize');
 
 const dateFormatter = require('../helpers/dateFormatter');
 
+const nodemailer = require('nodemailer')
+const ejs = require('ejs')
+
+let transporter = nodemailer.createTransport({
+  service : "gmail",
+  auth:{
+    user:"gr8stayapp@gmail.com",
+    pass:"ldwobfdlxhttobsc"
+  }
+})
+
+
 class HotelController {
 
     static customerProfile(req, res) {
@@ -85,7 +97,14 @@ class HotelController {
             })
 
             .catch(err => {
-                res.send(err)
+                if(err.name == 'SequelizeValidationError') {
+                    let errMsg = err.errors.map(e => {
+                        return e.message
+                    })
+                    res.send(errMsg)
+                } else {
+                    res.send(err)
+                }
             })
     }
 
@@ -93,6 +112,19 @@ class HotelController {
         Reservation.findByPk(+req.params.IdReservation, { include: [Hotel, Room] })
             .then(voucher => {
                 // res.send(voucher)
+                ejs.renderFile('./views/pages/voucher.ejs',{ pageTitle: 'Your Hotel Voucher', voucher, dateFormatter },(err,data)=>{
+                    if(err) return console.log(err);
+                    let mailOptions = {
+                        from : "gr8stayapp@gmail.com",
+                        to : req.session.user.email,
+                        subject : "Hotel Reservation at gr8stay",
+                        html :data
+                      }
+                    transporter.sendMail(mailOptions,(err,success)=>{
+                        if(err) return console.log(err);
+                        else return console.log(success,'Mail sent succesfully');
+                      })
+                })
                 res.render('pages/voucher', { pageTitle: 'Your Hotel Voucher', voucher, dateFormatter })
             })
             .catch(err => {

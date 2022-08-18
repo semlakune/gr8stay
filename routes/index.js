@@ -46,11 +46,11 @@ router.get('/', (req, res) => {
 })
 router.get('/profile', HotelController.customerProfile)
 router.get('/reservation', HotelController.reservation)
+router.get('/orders', HotelController.getOrders)
 router.get('/hotels', HotelController.showHotels)
 router.get('/hotels/:IdHotel/book', HotelController.hotelDetails)
 router.post('/hotels/:IdHotel/book/:IdRoom', HotelController.postBook)
 router.get('/voucher/:IdReservation', HotelController.voucher)
-router.get('/orders', HotelController.getOrders)
 
 
 module.exports = router

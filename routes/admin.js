@@ -55,21 +55,4 @@ admrouter.get('/:HotelId/editRoom/:RoomId', AdminController.editRoom)
 admrouter.post('/:HotelId/editRoom/:RoomId', AdminController.postEditRoom)
 
 
-
-// admrouter.get('/hotels', HotelController.showHotels)
-
-// admrouter.get('/hotels/add', )
-// admrouter.post('/hotels/add', )
-
-// admrouter.get('/hotels/:IdHotel/book', HotelController.hotelDetails)
-
-// admrouter.get('/hotels/:IdHotel/room/add', )
-// admrouter.post('/hotels/:IdHotel/room/add', )
-
-// admrouter.get('/hotels/:IdHotel/room/edit/:IdRoom', )
-// admrouter.post('/hotels/:IdHotel/room/edit/:IdRoom', )
-
-// admrouter.get('/hotels/:IdHotel/room/delete/:IdRoom', )
-
-
 module.exports = admrouter
