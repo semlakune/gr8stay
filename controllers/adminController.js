@@ -5,7 +5,7 @@ class AdminController {
     static register(req, res) {
         const { fullName, email, password, address, phoneNumber } = req.body
         User.create({ fullName, email, password, address, phoneNumber, role: 'admin' })
-            .then(e => res.send(e))
+            .then((_) => res.redirect('/hotels'))
             .catch(err => res.send(err))
     }
 
@@ -28,11 +28,23 @@ class AdminController {
             })
     }
 
+    static adminProfile(req, res) {
+        const id = req.session.user.userId
+        User.findByPk(id)
+            .then(admin => {
+                // res.send(admin)
+                res.render('pages/admin-profile', { admin, pageTitle: 'Admin Profile' })
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
     static showHotels(req, res) {
         Hotel.findAll()
             .then(hotels => {
                 // res.send(hotels)
-                res.render('pages/hotelsList', { hotels, pageTitle: 'Book Hotels' })
+                res.render('pages/hotelsList', { hotels, pageTitle: 'Dashboard' })
             })
             .catch(err => {
                 res.send(err)
