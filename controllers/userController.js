@@ -5,7 +5,7 @@ class UserController {
     static register(req,res) {
         const { fullName, email, password, address, phoneNumber } = req.body
         User.create({ fullName, email, password, address, phoneNumber,role : 'user' })
-            .then(e => res.redirct('/login'))
+            .then(e => res.redirect('/login'))
             .catch(err => res.send(err))
     }
 
