@@ -1,32 +1,32 @@
 [
     {
-        "name": "Padberg Inc",
-        "address": "Jakarta",
-        "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff"
+        "name": "Hotel Ubeid Bali",
+        "address": "Bali",
+        "imgUrl": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
-        "name": "Walter and Sons",
+        "name": "Hotel Unpas",
         "address": "Bandung",
-        "imgUrl": "http://dummyimage.com/573x785.png/ff4444/ffffff"
+        "imgUrl": "https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
-        "name": "Heller Group",
+        "name": "Hotel Ebis",
         "address": "Yogyakarta",
-        "imgUrl": "http://dummyimage.com/1116x764.png/ff4444/ffffff"
+        "imgUrl": "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
-        "name": "Hammes and Sons",
+        "name": "Hotel Horozon",
         "address": "Surabaya",
-        "imgUrl": "http://dummyimage.com/710x1035.png/5fa2dd/ffffff"
+        "imgUrl": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
-        "name": "Dare LLC",
+        "name": "Hotel Tugu",
         "address": "Semarang",
-        "imgUrl": "http://dummyimage.com/862x930.png/5fa2dd/ffffff"
+        "imgUrl": "https://images.pexels.com/photos/271643/pexels-photo-271643.jpeg?auto=compress&cs=tinysrgb&w=1600"
     },
     {
-        "name": "Wisozk LLC",
+        "name": "Hotel Golden Tulup",
         "address": "Yogyakarta",
-        "imgUrl": "http://dummyimage.com/814x672.png/dddddd/000000"
+        "imgUrl": "https://images.pexels.com/photos/594077/pexels-photo-594077.jpeg?auto=compress&cs=tinysrgb&w=1600"
     }
 ]

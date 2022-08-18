@@ -1,0 +1,71 @@
+<%- include('partials/head'); -%>
+
+<section class="container-fluid my-5 pt-5 pb-lg-4 px-xxl-4 d-flex justify-content-center align-items-center">
+    <div class="card w-50 border-0 p-md-5 p-4 bg-danger bg-gradient overflow-hidden" style="min-height: 65vh; --bs-bg-opacity: .5;">
+        <h1 class="text-white">Great! Here is your booking details</h1>
+        <table class="table">
+            <tr>
+                <td><h4 class="text-white mt-3">Hotel Name</h4></td>
+                <td><h4 class="text-white mt-3">: <%= voucher.Hotel.name %></h4></td>
+            </tr>
+            <tr>
+                <td><h4 class="text-white mt-3">Room Type</h4></td>
+                <td><h4 class="text-white mt-3">: <%= voucher.Room.roomType %></h4></td>
+            </tr>
+            <tr>
+                <td><h4 class="text-white mt-3">Guest Name</h4></td>
+                <td><h4 class="text-white mt-3">: <%= voucher.guestName %></h4></td>
+            </tr>
+            <tr>
+                <td><h4 class="text-white mt-3">Check In</h4></td>
+                <td><h4 class="text-white mt-3">: <%= dateFormatter(voucher.checkIn) %></h4></td>
+            </tr>
+            <tr>
+                <td><h4 class="text-white mt-3">Check Out</h4></td>
+                <td><h4 class="text-white mt-3">: <%= dateFormatter(voucher.checkOut) %></h4></td>
+            </tr>
+            <tr>
+                <td><h4 class="text-white mt-3">Total Payment</h4></td>
+                <td><h4 class="text-white mt-3">: <%= voucher.Room.formatCurrency %></h4></td>
+            </tr>
+        </table>
+    </div>  
+</section>
+
+<div class="container d-flex justify-content-center align-items-center">
+    <a href="/" class="btn btn-danger">Home</a>
+</div>
+
+
+<%- include('partials/foot'); -%>
+
+
+<!-- "id": 13,
+"guestName": "Aji",
+"checkIn": "2022-08-19T00:00:00.000Z",
+"checkOut": "2022-08-19T00:00:00.000Z",
+"UserId": 3,
+"HotelId": 4,
+"RoomId": 6,
+"createdAt": "2022-08-18T11:58:29.904Z",
+"updatedAt": "2022-08-18T11:58:29.904Z",
+"Hotel": {
+  "id": 4,
+  "name": "Hammes and Sons",
+  "address": "Surabaya",
+  "imgUrl": "http://dummyimage.com/710x1035.png/5fa2dd/ffffff",
+  "createdAt": "2022-08-17T11:59:14.293Z",
+  "updatedAt": "2022-08-17T11:59:14.293Z"
+},
+"Room": {
+  "id": 6,
+  "capacity": 2,
+  "facility": "",
+  "price": 2100000,
+  "roomType": "Deluxe Room",
+  "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+  "HotelId": 4,
+  "createdAt": "2022-08-17T11:59:26.542Z",
+  "updatedAt": "2022-08-18T11:36:23.529Z"
+}
+} -->
