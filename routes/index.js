@@ -35,25 +35,10 @@ router.get('/', (req, res) => {
   res.render('pages/home', { pageTitle: 'Home' })
 })
 router.get('/reservation', HotelController.reservation)
-
-
-
 router.get('/hotels', HotelController.showHotels)
-
-// router.get('/hotels/add', )
-// router.post('/hotels/add', )
-
 router.get('/hotels/:IdHotel/book', HotelController.hotelDetails)
 router.post('/hotels/:IdHotel/book/:IdRoom', HotelController.postBook)
 router.get('/itinerary/:IdReservation', HotelController.itinerary)
-
-// router.get('/hotels/:IdHotel/room/add', )
-// router.post('/hotels/:IdHotel/room/add', )
-
-// router.get('/hotels/:IdHotel/room/edit/:IdRoom', )
-// router.post('/hotels/:IdHotel/room/edit/:IdRoom', )
-
-// router.get('/hotels/:IdHotel/room/delete/:IdRoom', )
 
 
 module.exports = router
