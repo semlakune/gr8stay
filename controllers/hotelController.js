@@ -1,11 +1,11 @@
-const { Hotel, Reservation, Room, User } = require('../models');
+const { Hotel, Reservation, Room, User, Profile } = require('../models');
 const { Sequelize } = require('sequelize');
 
 class HotelController {
 
     static customerProfile(req, res) {
         const id = req.session.user.userId
-        User.findByPk(id)
+        User.findByPk(id,{include : Profile})
             .then(customer => {
                 // res.send(customer)
                 res.render('pages/customer-profile', { customer, pageTitle: 'Customer Profile' })
