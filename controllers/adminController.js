@@ -56,7 +56,7 @@ class AdminController {
         Hotel.findAll()
             .then(hotels => {
                 // res.send(hotels)
-                res.render('pages/hotelsList', { hotels, pageTitle: 'Dashboard' })
+                res.render('pages/admin-hotels', { hotels, pageTitle: 'Dashboard' })
             })
             .catch(err => {
                 res.send(err)
