@@ -19,6 +19,14 @@
                   required>
               </div>
               <div class="mb-4">
+                <label class="form-label" for="gender">Gender</label>
+                <select name="gender" class="form-control">
+                  <option value="" selected disabled>Choose..</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div class="mb-4">
                 <label class="form-label" for="email">Email address</label>
                 <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email"
                   required>
@@ -29,7 +37,7 @@
                 <div class="password-toggle">
                   <input class="form-control" type="password" id="password" name="password" minlength="8" required>
                 </div>
-
+              </div>
                 <div class="mb-4">
                   <label class="form-label" for="phoneNumber">Phone Number</label>
                   <input class="form-control" type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" required>
@@ -38,7 +46,6 @@
                   <label class="form-label" for="address">Address</label>
                   <input class="form-control" type="email" id="address" name="address" placeholder="Enter your address" required>
                 </div>
-              </div>
               <button class="btn btn-danger btn-lg w-100" type="submit">Sign up</button>
             </form>
           </div>

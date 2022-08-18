@@ -1,70 +1,70 @@
 [{
-    "capacity": 4,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "capacity": 2,
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Deluxe Room",
     "price": "3000000",
     "HotelId": 6
   }, {
-    "capacity": 4,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "capacity": 2,
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Superior Room",
     "price": "1900000",
     "HotelId": 1
   }, {
-    "capacity": 1,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "capacity": 2,
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Superior Room",
     "price": "1500000",
     "HotelId": 6
   }, {
-    "capacity": 3,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "capacity": 2,
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Deluxe Room",
     "price": "3000000",
     "HotelId": 5
   }, {
     "capacity": 2,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Deluxe Room",
     "price": "2800000",
     "HotelId": 3
   }, {
-    "capacity": 4,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "capacity": 2,
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/3634741/pexels-photo-3634741.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Deluxe Room",
     "price": "2100000",
     "HotelId": 4
   }, {
-    "capacity": 4,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "capacity": 2,
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Deluxe Room",
     "price": "1000000",
     "HotelId": 4
   }, {
     "capacity": 2,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Deluxe Room",
     "price": "1100000",
     "HotelId": 6
   }, {
     "capacity": 2,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Suite Room",
     "price": "1400000",
     "HotelId": 3
   }, {
-    "capacity": 3,
-    "facility": null,
-    "imgUrl": "http://dummyimage.com/956x731.png/5fa2dd/ffffff",
+    "capacity": 2,
+    "facility": "Private Pool",
+    "imgUrl": "https://images.pexels.com/photos/3754594/pexels-photo-3754594.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "roomType": "Suite Room",
     "price": "1800000",
     "HotelId": 1

@@ -10,7 +10,9 @@ const router = express.Router()
 router.get('/logout',(req,res)=>{
   req.session.destroy((err)=>{
     if(err) return res.send(err)
-    else res.redirect('/login')
+    else {
+        res.redirect('/login')
+    } 
   })
 })
 
@@ -48,6 +50,7 @@ router.get('/hotels', HotelController.showHotels)
 router.get('/hotels/:IdHotel/book', HotelController.hotelDetails)
 router.post('/hotels/:IdHotel/book/:IdRoom', HotelController.postBook)
 router.get('/itinerary/:IdReservation', HotelController.itinerary)
+router.get('/voucher/:IdReservation', HotelController.voucher)
 router.get('/orders', HotelController.getOrders)
 
 

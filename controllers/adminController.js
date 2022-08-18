@@ -3,8 +3,18 @@ const bcryptjs = require('bcryptjs');
 
 class AdminController {
     static register(req, res) {
-        const { fullName, email, password, address, phoneNumber } = req.body
+        const { fullName, email, password, address, phoneNumber, gender } = req.body
         User.create({ fullName, email, password, address, phoneNumber, role: 'admin' })
+            .then((user) => {
+                return Profile.create({
+                    gender,
+                    dateOfBirth: new Date(),
+                    nik: '',
+                    UserId: user.id,
+                    createdAt: new Date(),
+                    updatedAt: new Date()
+                })
+            })
             .then((_) => res.redirect('/admin/login'))
             .catch(err => res.send(err))
     }

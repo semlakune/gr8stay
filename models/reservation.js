@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       Reservation.belongsTo(models.Room)
 
     }
+    
   }
   Reservation.init({
     guestName: DataTypes.STRING,

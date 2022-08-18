@@ -1,11 +1,13 @@
 const { Hotel, Reservation, Room, User, Profile } = require('../models');
 const { Sequelize } = require('sequelize');
 
+const dateFormatter = require('../helpers/dateFormatter');
+
 class HotelController {
 
     static customerProfile(req, res) {
         const id = req.session.user.userId
-        User.findByPk(id,{include : Profile})
+        User.findByPk(id,{include: Profile})
             .then(customer => {
                 // res.send(customer)
                 res.render('pages/customer-profile', { customer, pageTitle: 'Customer Profile' })
@@ -79,7 +81,7 @@ class HotelController {
 
             })
             .then(reservation => {
-                res.redirect(`/itinerary/${reservation.id}`)
+                res.redirect(`/voucher/${reservation.id}`)
             })
 
             .catch(err => {
@@ -87,10 +89,11 @@ class HotelController {
             })
     }
 
-    static itinerary(req, res) {
+    static voucher(req, res) {
         Reservation.findByPk(+req.params.IdReservation, { include: [Hotel, Room] })
-            .then(reservation => {
-                res.send(reservation)
+            .then(voucher => {
+                // res.send(voucher)
+                res.render('pages/voucher', { pageTitle: 'Your Hotel Voucher', voucher, dateFormatter })
             })
             .catch(err => {
                 res.send(err)
