@@ -1,0 +1,65 @@
+<%- include('partials/head'); -%>
+<%- include('partials/nav'); -%>
+
+<section class="container-fluid my-5 pt-5 pb-lg-4 px-xxl-4">
+    
+    <div class="row">
+        <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="d-sm-flex align-items-center justify-content-between pb-3 pb-sm-4">
+            <h1 class="h2 mb-sm-0">Add room on hotel: <%= hotel.name %></h1>
+            <h3>
+                <a class="btn btn-secondary" href="/admin/<%= hotel.id %>/hotelDetail">Back to Rooms</a>
+            </h3>
+          </div>
+        <form action="/admin/<%= hotel.id %>/addRoom" method="post" class="needs-validation" novalidate="">
+            
+              <div class="col-12 my-3">
+                <label for="roomType" class="form-label">Room Type</label>
+                <input type="text" class="form-control" id="roomType" name="roomType" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Room type is required.
+                </div>
+              </div>
+
+              <div class="col-12 my-3">
+                <label for="facility" class="form-label">Facilities</label>
+                <input type="text" class="form-control" id="facility" name="facility" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Facility is required.
+                </div>
+              </div>
+    
+              <div class="col-12 my-3">
+                <label for="capacity" class="form-label">Capacity</label>
+                <input type="number" class="form-control" id="capacity" name="capacity" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Capacity is required.
+                </div>
+              </div>
+
+              <div class="col-12 my-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  price is required.
+                </div>
+              </div>
+
+              <div class="col-12 my-3">
+                <label for="imgUrl" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="" value="" required="">
+                <div class="invalid-feedback">
+                  Image URL is required.
+                </div>
+              </div>
+    
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Add Rooms</button>
+          </form>
+    </div>
+    </div>
+    
+    <div class="col-md-3"></div>
+</section>
+
+<%- include('partials/foot'); -%>
